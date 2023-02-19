@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+<h1>{{ project.cteated_on }}</h1>
+
+        <h5>Автор: </h5>
+        <p>{{ project.author }}</p>
+        <br>
+        <h5>Коментарий к посту: </h5>
+        <p>{{ project.body }}</p>
+    </div>
+</div>
+{% endblock %}
