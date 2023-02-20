@@ -5,7 +5,7 @@
 <h1>{{ project.title }}</h1>
 <div class="row">
     <div class="col-md-8">
-      <img src="{% static project.image %}" alt="" width="100%">
+      <img src="{% static project.image %}" alt="" width="70%">
     </div>
     <div class="col-md-4">
         <h5>0 проекте:</h5>
@@ -15,4 +15,21 @@
         <p>{{ project.technology }}</p>
     </div>
 </div>
+{%if comments_list%}
+    {%for c in comments_list%}
+        <p>
+            <strong>{{c.author}}</strong>
+            <p>{{body}}</p>
+            <p>{{cteated_on}}</p>
+    {%endfor %}
+    {%else%}
+    Коментарий не найден
+{%endif%}
+
+<form action="{% url 'projects:comments' project.id %}" method="POST"></form>
+
+    <input type="text" required placeholder="Ваше имя" name="name"><br>
+    <textarea name="text" required="" placeholder="Текст коментария" cols="30" rows="10"></textarea><br>
+    <button type="submit">Оставить коментарий</button>
+
 {% endblock %}
