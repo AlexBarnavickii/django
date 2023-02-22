@@ -12,14 +12,16 @@
             <div class="card-body">
                 <h5 class="card-title">{{ project.author }}</h5>
                 <p class="card-text">{{ project.body }}</p>
-                <p class="card-text">{{ project.cteated_on }}</p>
-                <a href="{% url 'blog_detail' project.pk %}"
+
+                <a href="{% url 'projects:azs' %}"
                    class="btn btn-primary">
                     Подробнее
                 </a>
             </div>
         </div>
     </div>
-    {% endfor %}
+
 </div>
+{% endfor %}
+
 {% endblock %}
