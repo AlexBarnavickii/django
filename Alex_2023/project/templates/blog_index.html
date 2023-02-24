@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 
 
-{% load static %}
+
 {% block page_content %}
 <h1>Коментарий</h1>
 <div class="row">
-    {% for project in projects %}
+    {% for comment in comments %}
     <div class="col-md-4">
         <div class="card md-2">
 
             <div class="card-body">
-                <h5 class="card-title">{{ project.author }}</h5>
-                <p class="card-text">{{ project.body }}</p>
+                <h5 class="card-title">{{ comment.author }}</h5>
+                <p class="card-text">{{ comment.body }}</p>
 
-                <a href="{% url 'projects:azs' %}"
+                <a href="{% url 'coments:blog_detail' project.pk%}"
                    class="btn btn-primary">
                     Подробнее
                 </a>
@@ -22,6 +22,6 @@
     </div>
 
 </div>
-{% endfor %}
+    {% endfor %}
 
 {% endblock %}

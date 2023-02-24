@@ -5,7 +5,8 @@
 {% block page_content %}
 <h1>Мои проекты</h1>
 <div class="row">
-    {% for project in projects %}
+    {% for project in projects  %}
+
     <div class="col-md-4">
         <div class="card md-2">
             <img class="card-img-top" src="{% static project.image %}">
@@ -18,15 +19,13 @@
                     Подробнее
                 </a>
 
-                <a href="{% url 'projects:azs' %}"
-                   class="btn btn-primary">
-                    Коментарии
-                </a>
+
             </div>
         </div>
     </div>
 
     {% endfor %}
+
 </div>
 {% endblock %}
 
